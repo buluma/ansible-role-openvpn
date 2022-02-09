@@ -6,7 +6,7 @@
 
   roles:
     - role: buluma.bootstrap
-    # - role: robertdebock.buildtools
+    - role: robertdebock.buildtools
     - role: buluma.epel
     # - role: robertdebock.python_pip
     # - role: robertdebock.openssl
