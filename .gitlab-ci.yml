@@ -1,0 +1,67 @@
+---
+image: "buluma/github-action-molecule:4.0.5"
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: "tcp://docker:2375"
+  PY_COLORS: 1
+
+molecule:
+  script:
+    - image=${image} tag=${tag} molecule test
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "main"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "amazonlinux"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+
+testing:
+  script:
+    - image=${image} tag=${tag} molecule test
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "testing"
+  retry: 1
+  parallel:
+    matrix:
+      - image: "amazonlinux"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "docker-ubuntu-systemd"
+        tag: "latest"
+
+galaxy:
+  script:
+    - ansible-galaxy role info buluma.openvpn

@@ -1,0 +1,12 @@
+---
+- name: Prepare server
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: buluma.bootstrap
+    # - role: robertdebock.buildtools
+    - role: buluma.epel
+    # - role: robertdebock.python_pip
+    # - role: robertdebock.openssl
