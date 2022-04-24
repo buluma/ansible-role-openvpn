@@ -11,8 +11,6 @@ variables:
 molecule:
   script:
     - image=${image} tag=${tag} molecule test
-  rules:
-    - if: $CI_COMMIT_REF_NAME == "main"
   retry: 1
   parallel:
     matrix:
@@ -62,38 +60,11 @@ testing:
       - image: "docker-ubuntu-systemd"
         tag: "focal"
 
-role_testing:
-  script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.openvpn
-  rules:
-    - if: $CI_COMMIT_REF_NAME == "testing"
-  retry: 1
-  parallel:
-    matrix:
-      - image: "amazonlinux"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "bookworm"
-      - image: "enterpriselinux"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "bookworm"
-      - image: "docker-ubuntu-systemd"
-        tag: "focal"
-
 galaxy:
   script:
     - ansible-galaxy role info buluma.openvpn
 
-role_testing_live:
+role_testing:
   script:
     - image=${image} tag=${tag} ansible-galaxy install buluma.openvpn
   retry: 1
