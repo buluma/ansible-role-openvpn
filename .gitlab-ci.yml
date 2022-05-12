@@ -13,11 +13,6 @@ molecule:
   allow_failure: true
   script:
     - image=${image} tag=${tag} molecule test
-  artifacts:
-    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
-    paths:
-      - /
-    expire_in: 1 day
   retry: 1
   parallel:
     matrix:
@@ -32,7 +27,7 @@ molecule:
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "debian-systemd"
         tag: "latest"
       - image: "debian-systemd"
@@ -61,7 +56,7 @@ testing:
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "debian-systemd"
         tag: "latest"
       - image: "debian-systemd"
@@ -94,7 +89,7 @@ role_testing:
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "debian-systemd"
         tag: "latest"
       - image: "debian-systemd"
@@ -104,6 +99,7 @@ role_testing:
 
 release_job:
   stage: .post
+  needs: [molecule]
   image: registry.gitlab.com/gitlab-org/release-cli:latest
   rules:
     - if: $CI_COMMIT_TAG
@@ -113,3 +109,8 @@ release_job:
     tag_name: $CI_COMMIT_TAG
     name: 'Release $CI_COMMIT_TAG'
     description: 'Release created using the release-cli.'
+  artifacts:
+    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME"
+    paths:
+      - /
+    expire_in: 1 day
