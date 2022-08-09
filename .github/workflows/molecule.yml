@@ -53,8 +53,6 @@ jobs:
             tag: "8"
           - image: "fedora-systemd"
             tag: "35"
-          - image: "fedora-systemd"
-            tag: "latest"
           - image: "debian-systemd"
             tag: "latest"
           - image: "debian-systemd"
