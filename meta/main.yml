@@ -4,8 +4,8 @@ galaxy_info:
   role_name: openvpn
   description: Install and configure openvpn server or client on your system.
   license: Apache-2.0
-  company: ShadowNet
-  min_ansible_version: "2.10"
+  company: none
+  min_ansible_version: "2.12"
 
   platforms:
     - name: Amazon
@@ -17,17 +17,15 @@ galaxy_info:
     - name: EL
       versions:
         - "8"
-    - name: Fedora
-      versions:
-        - "35"
-        - "36"
     - name: Debian
       versions:
-        - bullseye
-        - bookworm
+        - all
     - name: Ubuntu
       versions:
         - focal
+    - name: Kali
+      versions:
+        - all
 
   galaxy_tags:
     - openvpn
