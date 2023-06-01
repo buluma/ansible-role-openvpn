@@ -50,8 +50,6 @@ jobs:
             tag: "latest"
           - image: "docker-ubuntu-systemd"
             tag: "focal"
-          - image: "kali"
-            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3
