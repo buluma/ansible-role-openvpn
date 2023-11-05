@@ -2,9 +2,9 @@
 
 Install and configure openvpn server or client on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-openvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openvpn/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-openvpn/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openvpn)|[![quality](https://img.shields.io/ansible/quality/57994)](https://galaxy.ansible.com/buluma/openvpn)|[![downloads](https://img.shields.io/ansible/role/d/57994)](https://galaxy.ansible.com/buluma/openvpn)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-openvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openvpn/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-openvpn/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openvpn)|[![downloads](https://img.shields.io/ansible/role/d/4789)](https://galaxy.ansible.com/buluma/openvpn)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
