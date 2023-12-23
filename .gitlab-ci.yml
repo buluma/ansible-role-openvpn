@@ -12,12 +12,8 @@ molecule:
   allow_failure: true
   parallel:
     matrix:
-      - image: "amazonlinux"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "latest"
-      - image: "debian-systemd"
-        tag: "bullseye"
+      - image: "enterpriselinux"
+        tag: "7"
       - image: "enterpriselinux"
         tag: "8"
       - image: "debian-systemd"
@@ -26,8 +22,6 @@ molecule:
         tag: "bullseye"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
-      - image: "kali"
-        tag: "latest"
 
 galaxy:
   script:
