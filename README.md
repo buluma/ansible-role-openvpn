@@ -1,10 +1,10 @@
-# [Ansible role openvpn](#openvpn)
+# Ansible role [openvpn](https://galaxy.ansible.com/ui/standalone/roles/buluma/openvpn/documentation)
 
 Install and configure openvpn server or client on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-openvpn/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-openvpn/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-openvpn/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-openvpn/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openvpn.svg)](https://github.com/buluma/ansible-role-openvpn/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/openvpn)](https://galaxy.ansible.com/ui/standalone/roles/buluma/openvpn/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
