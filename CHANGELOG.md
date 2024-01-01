@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-openvpn/tree/HEAD)
+## [2.0.2](https://github.com/buluma/ansible-role-openvpn/tree/2.0.2) (2023-12-28)
 
-[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.0.1...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.0.1...2.0.2)
 
 **Closed issues:**
 
