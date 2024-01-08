@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/buluma/ansible-role-openvpn/tree/2.1.0) (2024-01-02)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.0.2...2.1.0)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#19](https://github.com/buluma/ansible-role-openvpn/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.2](https://github.com/buluma/ansible-role-openvpn/tree/2.0.2) (2023-12-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.0.1...2.0.2)
