@@ -10,7 +10,6 @@
         name: ansible-role-openvpn
       vars:
         openvpn_role: "server"
-        custom_route: "route 10.8.0.0 255.255.255.0"
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:
