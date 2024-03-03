@@ -8,6 +8,14 @@
       - openvpn_role in [ "client", "server" ]
     quiet: yes
 
+- name: assert | Test custom_route
+  ansible.builtin.assert:
+    that:
+      - custom_route is defined
+      - custom_route is string
+      # - custom_route in [ "client", "server" ]
+    quiet: yes
+
 - name: assert | Test openvpn_client_server
   ansible.builtin.assert:
     that:

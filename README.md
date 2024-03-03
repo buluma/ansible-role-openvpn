@@ -23,6 +23,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         name: buluma.openvpn
       vars:
         openvpn_role: "server"
+        custom_route: "route 10.8.0.0 255.255.255.0"
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:
@@ -76,6 +77,10 @@ openvpn_role: server
 # If you are configuring a client, setup these variables:
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
+
+# https://github.com/buluma/ansible-role-openvpn/issues/28
+# Allow customising the server.conf file
+custom_route: ""
 ```
 
 ## [Requirements](#requirements)
@@ -105,9 +110,10 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|7, 8|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
-|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|focal|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
