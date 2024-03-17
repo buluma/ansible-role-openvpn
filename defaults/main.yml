@@ -6,6 +6,11 @@
 
 openvpn_role: server
 
+# If you are configuring a server, setup these variables:
+openvpn_custom_route: false
+# i.e push ""route 10.8.0.0 255.255.255.0""
+custom_route: ""
+
 # If you are configuring a client, setup these variables:
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
