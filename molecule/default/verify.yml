@@ -14,7 +14,10 @@
       RedHat:
         - procps-ng
     openvpn_verify_requirements: "{{ _openvpn_verify_requirements[ansible_os_family] | default(_openvpn_verify_requirements['default']) }}"
+<<<<<<< HEAD
     contents: "{{ lookup('file','/etc/openvpn/server.conf') }}"
+=======
+>>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
 
   tasks:
     - name: Install requirements
@@ -32,10 +35,13 @@
           - 1194 in ansible_facts.udp_listen | map(attribute='port')
         quiet: yes
 
+<<<<<<< HEAD
     - name: Print file
       ansible.builtin.debug:
         msg: "the content file is {{ contents }}"
 
+=======
+>>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
   handlers:
     - name: Uninstall requirements
       ansible.builtin.package:
