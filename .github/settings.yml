@@ -5,8 +5,4 @@
 repository:
   description: Install and configure openvpn server or client on your system.
   homepage: https://buluma.github.io/
-<<<<<<< HEAD
-  topics: openvpn, ansible, molecule, tox, playbook
-=======
   topics: openvpn, networking, ansible, molecule, tox, playbook
->>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5

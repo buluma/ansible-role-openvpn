@@ -23,11 +23,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         name: buluma.openvpn
       vars:
         openvpn_role: "server"
-<<<<<<< HEAD
         custom_route: "redirect-gateway def1 bypass-dhcp"
-=======
-        custom_route: "route 10.8.0.0 255.255.255.0"
->>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:
@@ -87,8 +83,6 @@ custom_route: ""
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
 
-# https://github.com/buluma/ansible-role-openvpn/issues/28
-# Allow customising the server.conf file
 custom_route: ""
 ```
 
@@ -119,19 +113,10 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-<<<<<<< HEAD
-|[Amazon](https://hub.docker.com/repository/docker/buluma/amazonlinux/general)|Candidate|
-|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8|
-|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|34, 35|
-|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|bullseye, bookworm|
-|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|focal|
-=======
 |[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
 |[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
 |[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
->>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
