@@ -6,24 +6,7 @@
       - openvpn_role is defined
       - openvpn_role is string
       - openvpn_role in [ "client", "server" ]
-    quiet: yes
-
-<<<<<<< HEAD
-- name: assert | Test openvpn_custom_route
-  ansible.builtin.assert:
-    that:
-      - openvpn_custom_route is defined
-      - openvpn_custom_route is boolean
-      # - openvpn_custom_route in [ "client", "server" ]
-=======
-- name: assert | Test custom_route
-  ansible.builtin.assert:
-    that:
-      - custom_route is defined
-      - custom_route is string
-      # - custom_route in [ "client", "server" ]
->>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
-    quiet: yes
+    quiet: true
 
 - name: assert | Test openvpn_client_server
   ansible.builtin.assert:
@@ -31,6 +14,6 @@
       - openvpn_client_server is defined
       - openvpn_client_server is string
       - openvpn_client_server is not none
-    quiet: yes
+    quiet: true
   when:
     - openvpn_role == "client"
