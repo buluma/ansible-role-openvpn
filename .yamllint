@@ -10,7 +10,7 @@ rules:
     level: error
   line-length: disable
   truthy:
-    check-keys: false
+    check-keys: no
     allowed-values:
       - "yes"
       - "no"

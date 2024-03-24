@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   tasks:
     - name: Create openvpn server
@@ -23,14 +23,13 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         name: buluma.openvpn
       vars:
         openvpn_role: "server"
-        custom_route: "redirect-gateway def1 bypass-dhcp"
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:
         src: /etc/openvpn/easy-rsa/pki/{{ item }}
         dest: /etc/openvpn/client/{{ item | basename }}
         mode: "0640"
-        remote_src: yes
+        remote_src: true
       loop:
         - ca.crt
         - issued/client.crt
@@ -51,8 +50,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -113,10 +112,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|all|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|7, 8|
 |[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
-|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
-|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|focal|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
