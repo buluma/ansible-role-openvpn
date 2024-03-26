@@ -11,7 +11,6 @@ topology subnet
 server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 push "redirect-gateway def1 bypass-dhcp"
-<<<<<<< HEAD
 
 {% if openvpn_custom_route == 1 %}
 push {{ custom_route }}
@@ -19,9 +18,6 @@ push {{ custom_route }}
 push "redirect-gateway def1 bypass-dhcp"
 {% endif %}
 
-=======
-push {{ custom_route }}
->>>>>>> dfbdb3f9a410ae30a2c4e13da3875640ee0c97e5
 push "dhcp-option DNS 1.1.1.1"
 push "dhcp-option DNS 1.0.0.1"
 keepalive 10 120

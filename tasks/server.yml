@@ -18,7 +18,7 @@
     chdir: /etc/openvpn/easy-rsa
     creates: /etc/openvpn/easy-rsa/pki/ca.crt
   environment:
-    EASYRSA_BATCH: "yes"
+    EASYRSA_BATCH: "true"
 
 - name: server | Easyrsa gen-dh
   ansible.builtin.command:
@@ -32,7 +32,7 @@
     chdir: /etc/openvpn/easy-rsa
     creates: /etc/openvpn/easy-rsa/pki/issued/server.crt
   environment:
-    EASYRSA_BATCH: "yes"
+    EASYRSA_BATCH: "true"
 
 - name: server | Easyrsa build-client-full client nopass
   ansible.builtin.command:
@@ -40,7 +40,7 @@
     chdir: /etc/openvpn/easy-rsa
     creates: /etc/openvpn/easy-rsa/pki/issued/client.crt
   environment:
-    EASYRSA_BATCH: "yes"
+    EASYRSA_BATCH: "true"
 
 - name: server | Easyrsa gen-crl
   ansible.builtin.command:
