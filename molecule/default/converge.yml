@@ -1,8 +1,8 @@
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   tasks:
     - name: Create openvpn server
@@ -10,14 +10,13 @@
         name: ansible-role-openvpn
       vars:
         openvpn_role: "server"
-        custom_route: "redirect-gateway def1 bypass-dhcp"
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:
         src: /etc/openvpn/easy-rsa/pki/{{ item }}
         dest: /etc/openvpn/client/{{ item | basename }}
         mode: "0640"
-        remote_src: yes
+        remote_src: true
       loop:
         - ca.crt
         - issued/client.crt

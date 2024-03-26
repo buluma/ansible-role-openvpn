@@ -2,4 +2,8 @@
 roles:
   - name: buluma.bootstrap
   - name: buluma.epel
+  - name: buluma.python_pip
+  - name: buluma.ca_certificates
+  - name: buluma.ca
+  - name: buluma.openssl
 collections:

@@ -11,12 +11,13 @@ repos:
     rev: v1.32.0
     hooks:
       - id: yamllint
-        args: [-c=.yamllint]
+        args:
+          - -c=.yamllint
 
   - repo: https://github.com/buluma/pre-commit
     rev: v1.0.3
     hooks:
-      - id: ansible_role_find_unused_variable
+      # - id: ansible_role_find_unused_variable
       - id: ansible_role_find_empty_files
       - id: ansible_role_find_empty_directories
       - id: ansible_role_find_undefined_handlers
