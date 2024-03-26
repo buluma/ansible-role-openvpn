@@ -10,6 +10,6 @@ openvpn_role: server
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
 
+# If you are configuring a custom route, setup these variables:
 openvpn_custom_route: false
-
 custom_route: ""
