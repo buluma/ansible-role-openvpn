@@ -9,5 +9,3 @@ openvpn_role: server
 # If you are configuring a client, setup these variables:
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
-
-custom_route: ""
