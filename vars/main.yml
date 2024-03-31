@@ -31,6 +31,8 @@ _openvpn_configuration_directory:
     default: /etc/openvpn/server
     Debian: /etc/openvpn
     RedHat-7: /etc/openvpn
+    RedHat-8: /etc/openvpn
+    RedHat-9: /etc/openvpn
 
 openvpn_configuration_directory: "{{ _openvpn_configuration_directory[openvpn_role][ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_openvpn_configuration_directory[openvpn_role][ansible_os_family] | default(_openvpn_configuration_directory[openvpn_role]['default'] )) }}"
 
@@ -40,12 +42,18 @@ _openvpn_service:
   server:
     default: openvpn@server
     RedHat-7: openvpn@server
-    RedHat: openvpn-server@server
+    RedHat-8: openvpn@server
+    RedHat-9: openvpn@server
+    RedHat: openvpn@server
+    # RedHat: openvpn-server@server
     Ubuntu: openvpn
   client:
     default: openvpn@client
     RedHat-7: openvpn@client
-    RedHat: openvpn-client@client
+    RedHat-8: openvpn@client
+    RedHat-9: openvpn@client
+    RedHat: openvpn@client
+    # RedHat: openvpn-client@client
     Ubuntu: openvpn
 
 openvpn_service: "{{ _openvpn_service[openvpn_role][ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_openvpn_service[openvpn_role][ansible_os_family] | default(_openvpn_service[openvpn_role]['default'] )) }}"
