@@ -10,6 +10,7 @@
         name: ansible-role-openvpn
       vars:
         openvpn_role: "server"
+        custom_route: "dhcp-option DNS 1.0.0.2"
 
     - name: Copy certificates and keys from the server to the client
       ansible.builtin.copy:

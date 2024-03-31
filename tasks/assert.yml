@@ -17,3 +17,13 @@
     quiet: true
   when:
     - openvpn_role == "client"
+
+- name: assert | Test custom_route
+  ansible.builtin.assert:
+    that:
+      - custom_route is defined
+      - custom_route is string
+      - custom_route is not none
+    quiet: true
+  # when:
+  #   - openvpn_role == "client"
