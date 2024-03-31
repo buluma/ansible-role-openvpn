@@ -18,10 +18,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - focal
-        - bionic
-        - jammy
-        - lunar
-        - noble
 
   galaxy_tags:
     - openvpn
