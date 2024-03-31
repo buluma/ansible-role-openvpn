@@ -47,9 +47,9 @@ jobs:
       matrix:
         config:
           - image: "enterpriselinux"
-            tag: "8"
+            tag: "7"
           - image: "enterpriselinux"
-            tag: "8"
+            tag: "latest"
           - image: "docker-molecule-images"
             tag: "buster"
           - image: "docker-molecule-images"
