@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-openvpn/tree/HEAD)
+## [24.3.31](https://github.com/buluma/ansible-role-openvpn/tree/24.3.31) (2024-03-31)
 
-[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.2.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/2.2.0...24.3.31)
 
 **Merged pull requests:**
 
