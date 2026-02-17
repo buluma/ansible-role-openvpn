@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: buluma
   role_name: openvpn
@@ -6,13 +7,13 @@ galaxy_info:
   company: ShadowNet
   min_ansible_version: '2.12'
   platforms:
-  - name: Debian
-    versions:
-    - all
+    - name: Debian
+      versions:
+        - all
   - name: Ubuntu
     versions:
     - all
   galaxy_tags:
-  - openvpn
+    - openvpn
   - networking
 dependencies: []
