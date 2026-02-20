@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test openvpn_role
   ansible.builtin.assert:
     that:

@@ -1,5 +1,4 @@
 ---
-
 - name: client | Ensure /etc/openvpn/client exists
   ansible.builtin.file:
     path: /etc/openvpn/client

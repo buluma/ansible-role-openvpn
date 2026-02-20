@@ -1,5 +1,4 @@
 ---
-
 - name: server | Ensure /etc/openvpn/easy-rsa exists
   ansible.builtin.file:
     path: /etc/openvpn/easy-rsa
