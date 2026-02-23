@@ -12,50 +12,50 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
 
-    tasks:
-      - name: Create openvpn server
-        ansible.builtin.include_role:
-          name: ansible-role-openvpn
-        vars:
-          openvpn_role: "server"
+  tasks:
+  - name: Create openvpn server
+    ansible.builtin.include_role:
+      name: ansible-role-openvpn
+    vars:
+      openvpn_role: "server"
 
-      - name: Copy certificates and keys from the server to the client
-        ansible.builtin.copy:
-          src: /etc/openvpn/easy-rsa/pki/{{ item }}
-          dest: /etc/openvpn/client/{{ item | basename }}
-          mode: "0640"
-          remote_src: true
-        loop:
-          - ca.crt
-          - issued/client.crt
-          - private/client.key
-          - ta.key
+  - name: Copy certificates and keys from the server to the client
+    ansible.builtin.copy:
+      src: /etc/openvpn/easy-rsa/pki/{{ item }}
+      dest: /etc/openvpn/client/{{ item | basename }}
+      mode: "0640"
+      remote_src: true
+    loop:
+    - ca.crt
+    - issued/client.crt
+    - private/client.key
+    - ta.key
 
-      - name: Create openvpn client
-        ansible.builtin.include_role:
-          name: ansible-role-openvpn
-        vars:
-          openvpn_role: "client"
-          openvpn_client_server: "127.0.0.1"
+  - name: Create openvpn client
+    ansible.builtin.include_role:
+      name: ansible-role-openvpn
+    vars:
+      openvpn_role: "client"
+      openvpn_client_server: "127.0.0.1"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-openvpn/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    become: true
-    gather_facts: false
+- name: Prepare
+  hosts: all
+  become: true
+  gather_facts: false
 
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.epel
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.epel
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.

@@ -1,39 +1,39 @@
 ---
-  - name: Verify
-    hosts: all
-    become: true
-    gather_facts: true
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: true
 
-    vars:
-      _openvpn_verify_requirements:
-        default:
-          - procps
-        Debian:
-          - net-tools
-          - procps
-        RedHat:
-          - procps-ng
-      openvpn_verify_requirements: "{{ _openvpn_verify_requirements[ansible_os_family]
-        | default(_openvpn_verify_requirements['default']) }}"
+  vars:
+    _openvpn_verify_requirements:
+      default:
+      - procps
+      Debian:
+      - net-tools
+      - procps
+      RedHat:
+      - procps-ng
+    openvpn_verify_requirements: "{{ _openvpn_verify_requirements[ansible_os_family]
+      | default(_openvpn_verify_requirements['default']) }}"
 
-    tasks:
-      - name: Install requirements
-        ansible.builtin.package:
-          name: "{{ openvpn_verify_requirements }}"
-        notify:
-          - Uninstall requirements
+  tasks:
+  - name: Install requirements
+    ansible.builtin.package:
+      name: "{{ openvpn_verify_requirements }}"
+    notify:
+    - Uninstall requirements
 
-      - name: Gather facts on listening ports
-        community.general.listen_ports_facts:
+  - name: Gather facts on listening ports
+    community.general.listen_ports_facts:
 
-      - name: Check if UPD port 1194 is listening
-        assert:
-          that:
-            - 1194 in ansible_facts.udp_listen | map(attribute='port')
-          quiet: true
+  - name: Check if UPD port 1194 is listening
+    assert:
+      that:
+      - 1194 in ansible_facts.udp_listen | map(attribute='port')
+      quiet: true
 
-    handlers:
-      - name: Uninstall requirements
-        ansible.builtin.package:
-          name: "{{ openvpn_verify_requirements }}"
-          state: absent
+  handlers:
+  - name: Uninstall requirements
+    ansible.builtin.package:
+      name: "{{ openvpn_verify_requirements }}"
+      state: absent
