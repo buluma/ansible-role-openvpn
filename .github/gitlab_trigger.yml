@@ -1,7 +1,7 @@
 ---
 name: Mirror and run GitLab CI
 
-on:
+"on":
   push:
     branches:
       - master

@@ -13,9 +13,7 @@
         - procps
       RedHat:
         - procps-ng
-    openvpn_verify_requirements:
-      "{{ _openvpn_verify_requirements[ansible_facts['os_family']]
-      | default(_openvpn_verify_requirements['default']) }}"
+    openvpn_verify_requirements: "{{ _openvpn_verify_requirements[ansible_facts['os_family']] | default(_openvpn_verify_requirements['default']) }}"
 
   tasks:
     - name: Install requirements
@@ -28,7 +26,7 @@
       community.general.listen_ports_facts:
 
     - name: Check if UPD port 1194 is listening
-      assert:
+      ansible.builtin.assert:
         that:
           - 1194 in ansible_facts['udp_listen'] | map(attribute='port')
         quiet: true
