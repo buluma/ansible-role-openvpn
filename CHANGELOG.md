@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-openvpn/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/26.6.0...HEAD)
+
+**Implemented enhancements:**
+
+- Allow customising the server.conf file [\#28](https://github.com/buluma/ansible-role-openvpn/issues/28)
+
 ## [26.6.0](https://github.com/buluma/ansible-role-openvpn/tree/26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/24.3.31...26.6.0)
