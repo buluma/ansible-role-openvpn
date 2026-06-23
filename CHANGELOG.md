@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-openvpn/tree/HEAD)
+## [26.6.1](https://github.com/buluma/ansible-role-openvpn/tree/26.6.1) (2026-06-15)
 
-[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/26.6.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-openvpn/compare/26.6.0...26.6.1)
 
 **Implemented enhancements:**
 
