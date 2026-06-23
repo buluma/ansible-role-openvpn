@@ -14,8 +14,8 @@ openvpn_role: server
 openvpn_port: 1194
 openvpn_proto: udp
 openvpn_dev: tun
-openvpn_server_network: 10.8.0.0
-openvpn_server_netmask: 255.255.255.0
+openvpn_server_network: "10.8.0.0"
+openvpn_server_netmask: "255.255.255.0"
 openvpn_topology: subnet
 openvpn_cipher: AES-256-CBC
 openvpn_verb: 3
