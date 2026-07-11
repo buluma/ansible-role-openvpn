@@ -53,6 +53,13 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   become: true
   gather_facts: false
 
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
+
   roles:
     - role: buluma.bootstrap
     - role: buluma.epel
@@ -76,6 +83,26 @@ openvpn_role: server
 # If you are configuring a client, setup these variables:
 # openvpn_role: client
 # openvpn_client_server: vpn.example.com
+
+# Server configuration
+openvpn_port: 1194
+openvpn_proto: udp
+openvpn_dev: tun
+openvpn_server_network: "10.8.0.0"
+openvpn_server_netmask: "255.255.255.0"
+openvpn_topology: subnet
+openvpn_cipher: AES-256-CBC
+openvpn_verb: 3
+openvpn_push_options:
+  - "redirect-gateway def1 bypass-dhcp"
+  - "dhcp-option DNS 1.1.1.1"
+  - "dhcp-option DNS 1.0.0.1"
+
+# Extra configuration lines for the server
+openvpn_server_custom_options: []
+
+# Template to use for the server configuration
+openvpn_server_conf_template: server.conf.j2
 ```
 
 ## [Requirements](#requirements)
@@ -101,12 +128,14 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
 The minimum version of Ansible required is 2.12, tests have been done on:
 
@@ -124,6 +153,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-openvpn/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-openvpn
