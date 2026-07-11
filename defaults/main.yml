@@ -26,6 +26,5 @@ openvpn_push_options:
 
 # Extra configuration lines for the server
 openvpn_server_custom_options: []
-
 # Template to use for the server configuration
 openvpn_server_conf_template: server.conf.j2
