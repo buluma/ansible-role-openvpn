@@ -20,6 +20,10 @@ platforms:
     cgroupns_mode: host
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    # openvpn needs a tun device to start at all - privileged: true alone
+    # grants the capability but doesn't create the device node.
+    devices:
+      - /dev/net/tun:/dev/net/tun
     privileged: true
     pre_build_image: true
 provisioner:
