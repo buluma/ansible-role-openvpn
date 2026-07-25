@@ -52,10 +52,10 @@
     cmd: openvpn --genkey --secret /etc/openvpn/easy-rsa/pki/ta.key
     creates: /etc/openvpn/easy-rsa/pki/ta.key
 
-- name: server | Copy files to /etc/openvpn/server
+- name: server | Copy files to openvpn_configuration_directory
   ansible.builtin.copy:
     src: /etc/openvpn/easy-rsa/pki/{{ item }}
-    dest: /etc/openvpn/server/{{ item | basename }}
+    dest: "{{ openvpn_configuration_directory }}/{{ item | basename }}"
     mode: "0640"
     remote_src: true
   loop:
@@ -67,16 +67,6 @@
     - private/ca.key
     - private/client.key
     - private/server.key
-
-- name: server | Copy files to /etc/openvpn
-  ansible.builtin.copy:
-    src: /etc/openvpn/easy-rsa/pki/{{ item }}
-    dest: /etc/openvpn/{{ item | basename }}
-    mode: "0640"
-    remote_src: true
-  loop:
-    - ca.crt
-    - ta.key
 
 - name: server | Place server.conf
   ansible.builtin.template:
